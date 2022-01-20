@@ -3,7 +3,6 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity({
     name:'users',
 })
-
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
@@ -15,7 +14,7 @@ export class User {
     password: string;
 }
 
-export class UserFileds {
+export class UserFields {
     email: string;
-    password: string;ß
+    password: string;
 }

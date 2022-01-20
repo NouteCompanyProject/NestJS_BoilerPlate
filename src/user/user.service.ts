@@ -1,6 +1,6 @@
 import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User, UserFileds } from './entities/user.entity';
+import { User, UserFields } from './entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class UserService {
         return await this.userRepository.findOne({ email });
     }
 
-    async create(payload: UserFileds) {
+    async create(payload: UserFields) {
         const user = await this.getByEmail(payload.email);
 
         if(user) {
