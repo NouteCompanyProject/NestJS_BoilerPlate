@@ -1,14 +1,13 @@
-
-import { Body, Controller, Get, Post, Req, UseGuards, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
 import { UserService } from "src/user/user.service";
 
 
-@Controller('/')
+@Controller('/user')
 export class UserController {
     constructor(private userService: UserService) { } //주입을 해줘야함
 
-    @Get('/test')
-    test() {
-        return 'test';
+    @Post('/signup')
+    userSignUp(@Body() body) { 
+        return this.userService.signUp(body.username, body.password);
     }
 }
