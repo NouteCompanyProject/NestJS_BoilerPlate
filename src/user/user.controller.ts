@@ -10,4 +10,9 @@ export class UserController {
     userSignUp(@Body() body) { 
         return this.userService.signUp(body.username, body.password);
     }
+
+    @Post('/signin')
+    userSignIn(@Body() body) {
+        return this.userService.signIn(body.username, body.password)
+    }
 }
