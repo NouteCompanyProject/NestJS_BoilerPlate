@@ -20,10 +20,10 @@ const pool_opts = { //createPool에 인자로 안넣어짐
 const db_conn_pool = createPool(mysql_config);
 
 
-const connection = async () => {
+export const connection = async () => {
     return await db_conn_pool.getConnection()
 }
-const connectionClose = async (conn) => {
+export const connectionClose = async (conn) => {
     await conn.release()
 }
 
