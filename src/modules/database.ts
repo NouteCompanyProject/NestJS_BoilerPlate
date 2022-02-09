@@ -1,4 +1,5 @@
 import { createPool } from 'mysql2/promise'
+import { winlog } from '../modules/log'
 import * as dotenv from 'dotenv'
 dotenv.config()
 
@@ -50,14 +51,14 @@ export const init = async () => {
         var conn = await connection();
         var tableinit = await createTables(conn);
         await connectionClose(conn);
-        if(tableinit) {
-            console.log("DATABASE - TABLE CREATE SUCCESS");
+        if (tableinit) {
+            winlog.info("DATABASE - TABLE CREATE SUCCESS")
         } else {
-            console.log("DATABASE - TABLE CREATE FAIL")
+            winlog.info("DATABASE - TABLE CREATE FAIL")
         }
-        console.log("DATABASE - CONNECT SUCCESS");
+        winlog.info("DATABASE - CONNECT SUCCESS")
     } catch (err) {
-        console.log("DATABASE - CONNECT FAIL");
+        winlog.info("DATABASE - CONNECT FAIL")
         console.log(err)
     }
 }
