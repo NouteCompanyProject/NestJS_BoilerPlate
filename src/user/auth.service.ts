@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { winlog } from 'src/modules/log';
-import * as repository from './user.repository';
+import * as repository from './auth.repository';
 import * as jwt from 'jsonwebtoken'
 const jwt_sceret = process.env.JWT_SCERET_KEY
 
