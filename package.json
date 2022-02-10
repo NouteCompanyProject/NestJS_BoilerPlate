@@ -33,6 +33,7 @@
     "class-validator": "^0.13.2",
     "date-utils": "^1.2.21",
     "dotenv": "^16.0.0",
+    "exception": "^1.0.9",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",

@@ -1,8 +1,8 @@
 import { Body, Controller, Post } from "@nestjs/common";
-import { UserService } from "src/user/user.service";
+import { UserService } from "src/user/auth.service";
 
 
-@Controller('/user')
+@Controller('/auth')
 export class UserController {
     constructor(private userService: UserService) { } //주입을 해줘야함
 
